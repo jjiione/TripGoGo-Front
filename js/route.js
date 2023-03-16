@@ -72,13 +72,45 @@ function makeList(data, idname, inputname) {
     document.getElementById(idname).appendChild(button);
 
     button.addEventListener("click", function () {
-      departureX = area.X;
-      departureY = area.Y;
-      console.log(area.x);
-      console.log(area.y);
+      if (idname == "departures-list") {
+        departureX = area.x;
+        departureY = area.y;
+      } else {
+        arrivalX = area.x;
+        arrivalY = area.y;
+      }
       document.getElementById(inputname).value = area.place_name;
       document.getElementById(idname).innerHTML = ``;
-      console.log(departureX);
     });
   });
 }
+
+document
+  .getElementById("btn-search-route")
+  .addEventListener("click", function () {
+    console.log("departure : " + departureX + " , " + departureY);
+    console.log("arrival : " + arrivalX + " , " + arrivalY);
+
+    const options = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        appKey: "e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5",
+      },
+      body: JSON.stringify({
+        startX: departureX,
+        startY: departureY,
+        endX: arrivalX,
+        endY: arrivalY,
+        lang: 0,
+        format: "json",
+        count: 10,
+      }),
+    };
+
+    fetch("https://apis.openapi.sk.com/transit/routes", options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+  });
