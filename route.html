@@ -104,26 +104,15 @@ https://templatemo.com/tm-583-festava-live
           <div class="row">
             <!-- 관광지 검색 start -->
             <form class="d-flex mt-3" role="search" onsubmit="return false">
-              <select id="search-area" class="form-select" aria-label="Default select example">
-                <option value="0" selected>검색 할 지역 선택</option>
-              </select>
-              <select
-                id="search-content-id"
-                class="form-select"
-                aria-label="Default select example"
-              >
-                <option value="0" selected>관광지 유형</option>
-                <option value="12">관광지</option>
-                <option value="14">문화시설</option>
-                <option value="15">축제공연행사</option>
-                <option value="25">여행코스</option>
-                <option value="28">레포츠</option>
-                <option value="32">숙박</option>
-                <option value="38">쇼핑</option>
-                <option value="39">음식점</option>
-              </select>
               <input
-                id="search-keyword"
+                id="search-departures"
+                class="form-control me-2"
+                type="search"
+                placeholder="검색어"
+                aria-label="검색어"
+              />
+              <input
+                id="search-arrivals"
                 class="form-control me-2"
                 type="search"
                 placeholder="검색어"
@@ -161,5 +150,6 @@ T e m p l a t e M o
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/route.js"></script>
   </body>
 </html>
