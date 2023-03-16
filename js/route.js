@@ -90,4 +90,27 @@ document
   .addEventListener("click", function () {
     console.log("departure : " + departureX + " , " + departureY);
     console.log("arrival : " + arrivalX + " , " + arrivalY);
+
+    const options = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        appKey: "e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5",
+      },
+      body: JSON.stringify({
+        startX: departureX,
+        startY: departureY,
+        endX: arrivalX,
+        endY: arrivalY,
+        lang: 0,
+        format: "json",
+        count: 10,
+      }),
+    };
+
+    fetch("https://apis.openapi.sk.com/transit/routes", options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   });
