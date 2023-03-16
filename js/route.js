@@ -30,9 +30,17 @@ function makeList(data) {
   let trips = data.documents;
   console.log(trips);
   let tripList = ``;
+  document.getElementById("kakaolist").innerHTML = ``;
   trips.forEach((area) => {
-    tripList += `<li>${area.place_name}</li>`;
-  });
+    let button = document.createElement("button");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-light");
+    button.appendChild(document.createTextNode(area.place_name));
+    document.getElementById("kakaolist").appendChild(button);
 
-  document.getElementById("kakaolist").innerHTML = tripList;
+    button.addEventListener("click", function () {
+      console.log(area.x);
+      console.log(area.y);
+    });
+  });
 }
