@@ -182,7 +182,6 @@ https://templatemo.com/tm-583-festava-live
                 contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
                 markers = [], // 마커를 담을 배열입니다
                 currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
-             
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                 mapOption = {
                     center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
@@ -315,14 +314,13 @@ https://templatemo.com/tm-583-festava-live
                 }  else {
                     content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
                 }                
-               
                 content += '    <span class="tel">' + place.phone + '</span>' + 
                             '</div>' + 
                             '<div class="after"></div>';
             
                 contentNode.innerHTML = content;
                 placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
-                placeOverlay.setMap(map);  
+                placeOverlay.setMap(map);  s
             }
             
             
