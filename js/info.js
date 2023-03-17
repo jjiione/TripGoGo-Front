@@ -20,4 +20,72 @@ fetch("../json/korea-administrative-district.json")
 .then(response => {
   return response.json();
 })
-.then(jsondata => console.log(jsondata));
+  .then(jsondata => console.log(jsondata));
+
+
+// 공공데이터에서 지역구 가져오기
+var serviceKey = "yEDlTnRgLJ6TyA%2B5%2FJVGel5GPAULuQKSnfZzzxUgCdlvG%2BfnI8wYyOfYvmMZMjpFHF%2FlhvqHyavoqE5eWqqjgw%3D%3D";
+let areaUrl = "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=" +
+  serviceKey + "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json";
+
+  fetch(areaUrl, { method: "GET" })
+  .then((response) => response.json())
+  .then((data) => makeOption(data));
+
+  function makeOption(data) {
+    let areas = data.response.body.items.item;
+    console.log(data);
+    let sel = document.getElementById("search-area1");
+    areas.forEach((area) => {
+      let opt = document.createElement("option");
+      opt.setAttribute("value", area.code);
+      opt.appendChild(document.createTextNode(area.name));
+  
+      sel.appendChild(opt);
+    });
+}
+  
+
+// 카테고리로 검색
+
+// var map = new kakao.maps.Map(mapContainer, mapOption);
+document.getElementById("btn-search").addEventListener("click", () => {
+  let category = document.getElementById("search-type").value;
+
+  var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+  
+  // 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places(map); 
+
+// 카테고리로 은행을 검색합니다
+ps.categorySearch(category, placesSearchCB, {useMapBounds:true}); 
+
+// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+function placesSearchCB (data, status, pagination) {
+    if (status === kakao.maps.services.Status.OK) {
+        for (var i=0; i<data.length; i++) {
+            displayMarker(data[i]);    
+        }       
+    }
+}
+
+// 지도에 마커를 표시하는 함수입니다
+function displayMarker(place) {
+    // 마커를 생성하고 지도에 표시합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: new kakao.maps.LatLng(place.y, place.x) 
+    });
+
+    // 마커에 클릭이벤트를 등록합니다
+    kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infowindow.open(map, marker);
+    });
+}
+
+  
+});
+
