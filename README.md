@@ -9,16 +9,24 @@
 <br>
 
 # :memo: 웹 페이지
-## Main Page
-<br>
-<img src = "./images/mainPage.png" width="550" height="370">
-<br>
+### Main Page
+- Main Page
+<img src = "./images/mainPage.png" width="600" height="370">
+<br><br>
 
-## Info
+### Info
+- 관광지, 카페, 음식점 정보 확인 가능
+<img src = "./images/info.png" width="600" height="370">
+<br><br>
 
+### Route
+- 출발지부터 목적지까지 경로 확인 가능
+<img src = "./images/routeInit.png" width="600" height="370">
 <br>
-
-## 
+<img src = "./images/route1.png" width="600" height="370">
+<br>
+<img src = "./images/route2.png" width="600" height="370">
+<br>
 
 
 <br>
