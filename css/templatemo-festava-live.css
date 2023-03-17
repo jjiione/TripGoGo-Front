@@ -237,6 +237,8 @@ strong {
   background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
   padding: 45px;
+  max-height: calc(100vh - 400px);
+  overflow-y: auto;
 }
 
 .nav-tabs {
