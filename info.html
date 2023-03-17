@@ -23,6 +23,9 @@
 
     <link href="css/templatemo-festava-live.css" rel="stylesheet" />
 
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab875d88d46e8c95321681c7d548bd5c&libraries=services"></script>
+
     <style>
         .map_wrap,
         .map_wrap * {
@@ -234,23 +237,19 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_3">Artists</a>
+                            <a class="nav-link click-scroll" href="index.html#section_3">Info</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_4">Schedule</a>
+                            <a class="nav-link click-scroll" href="index.html#section_4">Route</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_5">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="index.html#section_5">Trip</a>
                         </li>
                     </ul>
 
-                    <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
+                    <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Login</a>
                 </div>
             </div>
         </nav>
@@ -259,7 +258,32 @@ https://templatemo.com/tm-583-festava-live
 
             <div class="container">
                 <div class="row">
+
                     <!-- 관광지 검색 start -->
+                    <div class="mt-3 d-flex justify-content-center">
+                        <div class="search-bar me-3" style="width:20%;">
+                            <select id="search-area1" class="form-select" aria-label="Default select example"
+                                style="background-color: rgba(255, 255, 255, 0);text-align: center;border: rgba(0, 0, 0, 0);font-size: 20px;">
+                                <option value="0" selected>시/도</option>
+                            </select>
+                        </div>
+                        <div class="search-bar" style="width:20%;">
+                            <select id="search-area2" class="form-select" aria-label="Default select example"
+                                style="background-color: rgba(255, 255, 255, 0);text-align: center;border: rgba(0, 0, 0, 0);font-size: 20px">
+                                <option value="0" selected>구/군</option>
+                            </select>
+                        </div>
+                        <div class="search-bar" style="width:20%;">
+                            <select id="search-area2" class="form-select" aria-label="Default select example"
+                                style="background-color: rgba(255, 255, 255, 0);text-align: center;border: rgba(0, 0, 0, 0);font-size: 20px">
+                                <option value="0" selected>유형</option>
+                            </select>
+                        </div>
+                        <button class="ms-2 btn" id="btn-search-route">Find</button>
+                        <!-- 관광지 검색 end -->
+                    </div>
+
+                    <!-- 관광지 검색 start
                     <form class="d-flex mt-3" role="search" onsubmit="return false">
                         <select id="search-area1" class="form-select" aria-label="Default select example">
                             <option value="0" selected>시/도</option>
@@ -275,7 +299,7 @@ https://templatemo.com/tm-583-festava-live
                             <option value="CE7">카페</option>
                         </select>
                         <button id="btn-search" class="btn btn-outline-success" type="submit">검색</button>
-                    </form>
+                    </form> -->
 
                     <!-- 관광지 검색 end -->
                 </div>
@@ -285,20 +309,19 @@ https://templatemo.com/tm-583-festava-live
             <!-- 지도 부분 -->
             <div style="margin: 0% 10% 0% 10%">
                 <div class="tab-content shadow-lg mt-5 w-100" style="background-color: rgba(255, 255, 255, 0.4);">
-                    <div id="map" style="width:100%;height:350px;">
-                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab875d88d46e8c95321681c7d548bd5c&libraries=services"></script>
-                    <script>
-                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-                            mapOption = {
-                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                                level: 3 // 지도의 확대 레벨
-                            };
+                    <div id="map" style="width:100%;height:350px;border-radius: 10px;">
+                        <!-- <script>
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = {
+                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                    level: 3 // 지도의 확대 레벨
+                                };
 
-                        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-                        var map = new kakao.maps.Map(mapContainer, mapOption); 
-                    </script>
+                            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                            var map = new kakao.maps.Map(mapContainer, mapOption); 
+                        </script> -->
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -314,7 +337,7 @@ https://templatemo.com/tm-583-festava-live
                         </ul>
 
                     </div>
-                    
+
                 </div>
 
             </div>
