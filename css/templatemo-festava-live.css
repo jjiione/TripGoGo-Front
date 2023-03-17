@@ -629,6 +629,50 @@ strong {
 }
 
 /*---------------------------------------
+  ROUTE             
+-----------------------------------------*/
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-bar input {
+  background-color: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  /* font-weight: bold; */
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: white;
+}
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#btn-search-route {
+  display: inline-block;
+  border-radius: 60px;
+  text-transform: capitalize;
+  color: white;
+  padding: 0 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15); */
+}
+
+/*---------------------------------------
   SCHEDULE              
 -----------------------------------------*/
 .schedule-section {
