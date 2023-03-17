@@ -54,10 +54,16 @@ var imageSrc = '../images/location-dot-solid.png', // 마커이미지의 주소�
 
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
+var markerList = [];
+
 // var map = new kakao.maps.Map(mapContainer, mapOption);
 document.getElementById("btn-search").addEventListener("click", () => {
   // window.location.reload();
   let category = document.getElementById("search-type").value;
+  
+  for (var i = 0; i < markerList.length; i++){
+    markerList[i].setMap(null);
+  }
 
   var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
@@ -85,6 +91,9 @@ function displayMarker(place) {
       position: new kakao.maps.LatLng(place.y, place.x),
         image: markerImage
     });
+  
+  markerList.push(marker);
+  
 
     // 마커에 클릭이벤트를 등록합니다
     kakao.maps.event.addListener(marker, 'click', function() {
