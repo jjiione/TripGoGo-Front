@@ -9,6 +9,16 @@
 <br>
 
 # :memo: 웹 페이지
+## Main Page
+<br>
+<img src = "./images/mainPage.png" width="550" height="370">
+<br>
+
+## Info
+
+<br>
+
+## 
 
 
 <br>
