@@ -233,6 +233,9 @@ strong {
   position: relative;
 }
 
+#route-result {
+  display: none;
+}
 .tab-content {
   background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
@@ -942,6 +945,25 @@ strong {
   to {
     transform: rotate(360deg);
   }
+}
+
+/*---------------------------------------
+  SCROLL BAR STYLES               
+-----------------------------------------*/
+
+#route-result::-webkit-scrollbar {
+  width: 20px; /* 스크롤바의 너비 */
+}
+
+#route-result::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: rgba(255, 255, 255, 0.5); /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+#route-result::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /*스크롤바 뒷 배경 색상*/
 }
 
 /*---------------------------------------
