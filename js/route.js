@@ -106,18 +106,24 @@ document.getElementById("btn-search-route").addEventListener("click", function (
   fetch("https://apis.openapi.sk.com/transit/routes", options)
     .then((response) => response.json())
     .then((data) => makeRouteList(data))
+    .then(map.relayout())
     .catch((err) => console.error(err));
 });
 
 function makeRouteList(data) {
-  document.getElementById("route-result").innerHTML = ``;
+  // while (document.getElementById("route-result").childElementCount > 1) {
+  //   document
+  //     .getElementById("route-result")
+  //     .removeChild(document.getElementById("route-result").lastChild);
+  // }
+  // document.getElementById("route-result").innerHTML = ``;
   console.log(data);
   console.log(data.metaData.plan);
   let trips = data.metaData.plan.itineraries;
   // fa-bus-simple
   for (trip of trips) {
     let route = `
-    <div class="tab-content shadow-lg w-100 mb-5" style="background-color:rgb(255, 255, 255)">
+    <div class="tab-content shadow-lg w-100 mb-3" style="background-color:rgb(255, 255, 255)">
       <div class="w-100 d-flex align-items-center mb-3">`;
     let desc = ``;
     let totalTime = trip.totalTime;
@@ -125,22 +131,19 @@ function makeRouteList(data) {
     let legs = trip.legs;
     for (leg of legs) {
       if (leg.mode == "WALK") {
-        route += `<span class="fa-stack fa-2x">
+        route += `<span class="fa-stack fa-1x">
         <i class="fa-solid fa-circle fa-stack-2x"></i>
         <i class="fa-solid fa-person-walking fa-stack-1x fa-inverse"></i>
       </span>`;
         route += `<hr style="width:${
           (leg.sectionTime * 100) / totalTime
         }%; border:5px solid black;"></hr>`;
-        desc += `<div class="mt-1">
-      <i class="fa-solid fa-person-walking"></i>
-      <span>도보${Math.ceil(leg.sectionTime / 60)}분</span></div>`;
       } else if (leg.mode == "TRANSFER") {
         route += `<hr style="width:${Math.ceil(
           (leg.sectionTime * 100) / totalTime
         )}%; border:5px solid gray;"></hr>`;
       } else if (leg.mode == "BUS") {
-        route += `<span class="fa-stack fa-2x" style="color:#${leg.routeColor}">
+        route += `<span class="fa-stack fa-1x" style="color:#${leg.routeColor}">
         <i class="fa-solid fa-circle fa-stack-2x"></i>
         <i class="fa-solid fa-bus-simple fa-stack-1x fa-inverse"></i>
       </span>`;
@@ -148,16 +151,13 @@ function makeRouteList(data) {
           (leg.sectionTime * 100) / totalTime
         )}%; border:5px solid #${leg.routeColor};"></hr>`;
       } else if (leg.mode == "SUBWAY") {
-        route += `<span class="fa-stack fa-2x" style="color:#${leg.routeColor}">
+        route += `<span class="fa-stack fa-1x" style="color:#${leg.routeColor}">
         <i class="fa-solid fa-circle fa-stack-2x"></i>
         <i class="fa-solid fa-bus-simple fa-stack-1x fa-inverse"></i>
       </span>`;
         route += `<hr style="width:${Math.ceil(
           (leg.sectionTime * 100) / totalTime
         )}%; border:5px solid #${leg.routeColor};"></hr>`;
-        desc += `<div class="mt-1">
-          <i class="fa-solid fa-train-subway"></i>
-          <span>지하철 ${Math.ceil(leg.sectionTime / 60)}분</span></div>`;
       }
     }
     route += `</div>`;
@@ -167,5 +167,12 @@ function makeRouteList(data) {
     route += `</div>`;
     document.getElementById("route-result").innerHTML += route;
     document.getElementById("route-result").style.display = "block";
+    var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+      mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3, // 지도의 확대 레벨
+      };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption);
   }
 }
