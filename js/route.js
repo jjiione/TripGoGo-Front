@@ -19,6 +19,7 @@ document.getElementById("btn-search-departures").addEventListener("click", funct
     return;
   } else {
     searchUrl += `${keyword}`;
+    console.log(searchUrl);
   }
 
   fetch(searchUrl, {
@@ -63,7 +64,11 @@ function makeList(data, idname, inputname) {
   trips.forEach((area) => {
     let button = document.createElement("button");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-light");
+    button.setAttribute("class", "btn-select");
+    button.setAttribute(
+      "style",
+      "width:100%; font-weight:bold; color:white; background-color:transparent"
+    );
     button.appendChild(document.createTextNode(area.place_name));
     document.getElementById(idname).appendChild(button);
 

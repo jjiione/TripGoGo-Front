@@ -21,7 +21,7 @@ https://templatemo.com/tm-583-festava-live
   --border-color: #7fffd4;
   --link-hover-color: #b22727;
 
-  --body-font-family: "Outfit", sans-serif;
+  --body-font-family: "GmarketSans", "Outfit", sans-serif;
 
   --h1-font-size: 74px;
   --h2-font-size: 46px;
@@ -636,6 +636,26 @@ strong {
 /*---------------------------------------
   ROUTE             
 -----------------------------------------*/
+
+.btn-select {
+  padding: 24px 20px;
+  font-size: 20px;
+  /* font-weight: bold; */
+  color: white;
+  font-weight: bold;
+  /* color: white; */
+}
+
+#departures-list {
+  background-color: transparent;
+
+  /* margin-top: 420px; */
+  align-items: center;
+  padding: 10px 20px;
+  border: 0;
+  outline: none;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -651,6 +671,7 @@ strong {
   outline: none;
   padding: 24px 20px;
   font-size: 20px;
+  font-family: ;
   /* font-weight: bold; */
   color: white;
 }
@@ -1068,4 +1089,44 @@ strong {
   h5 {
     font-size: 20px;
   }
+}
+
+@font-face {
+  font-family: "GmarketSans";
+  font-weight: 300;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf") format("truetype");
+  font-display: swap;
+  unicode-range: U+AC00-D7A3;
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf") format("truetype");
+  font-display: swap;
+  unicode-range: U+AC00-D7A3;
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf") format("truetype");
+  font-display: swap;
+  unicode-range: U+AC00-D7A3;
 }
