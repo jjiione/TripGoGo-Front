@@ -273,13 +273,13 @@ https://templatemo.com/tm-583-festava-live
                                 <option value="0" selected>시/도</option>
                             </select>
                         </div>
-                        <div class="search-bar" >
+                        <div class="search-bar me-3" >
                             <select id="search-area2" class="form-select" aria-label="Default select example"
                                 style="background-color: rgba(255, 255, 255, 0);text-align: center;border: rgba(0, 0, 0, 0);font-size: 20px">
                                 <option value="0" selected>구/군</option>
                             </select>
                         </div>
-                        <div class="search-bar">
+                        <div class="search-bar me-3">
                             <select id="search-type" class="form-select" aria-label="Default select example"
                                 style="background-color: rgba(255, 255, 255, 0);text-align: center;border: rgba(0, 0, 0, 0);font-size: 20px">
                                 <option  value="0" selected class="options">유형</option>
@@ -289,29 +289,11 @@ https://templatemo.com/tm-583-festava-live
                                 <option  value="CE7" class="options">카페</option>
                             </select>
                         </div>
-                        <button class="ms-2 btn" id="btn-search" type="submit">Find</button>
+                        <button class="me-3 btn" id="btn-search" type="submit">Find</button>
                         <!-- 관광지 검색 end -->
                     </div>
 
-                    <!-- 관광지 검색 start
-                    <form class="d-flex mt-3" role="search" onsubmit="return false">
-                        <select id="search-area1" class="form-select" aria-label="Default select example">
-                            <option value="0" selected>시/도</option>
-                        </select>
-                        <select id="search-area2" class="form-select" aria-label="Default select example">
-                            <option value="0" selected>구/군</option>
-                        </select>
-                        <select id="search-type" class="form-select" aria-label="Default select example">
-                            <option value="0" selected>유형</option>
-                            <option value="SW8">지하철역</option>
-                            <option value="AT4">관광명소</option>
-                            <option value="FD6">음식점</option>
-                            <option value="CE7">카페</option>
-                        </select>
-                        <button id="btn-search" class="btn btn-outline-success" type="submit">검색</button>
-                    </form> -->
 
-                    <!-- 관광지 검색 end -->
                 </div>
             </div>
 
@@ -319,24 +301,12 @@ https://templatemo.com/tm-583-festava-live
             <!-- 지도 부분 -->
             <div style="margin: 0% 10% 0% 10%">
                 <div class="tab-content shadow-lg mt-5 w-100" style="background-color: rgba(255, 255, 255, 0.4);">
-                    <div id="map" style="width:100%;height:350px;border-radius: 10px;">
-                        <!-- <script>
-                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-                                mapOption = {
-                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                                    level: 3 // 지도의 확대 레벨
-                                };
-
-                            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-                            var map = new kakao.maps.Map(mapContainer, mapOption); 
-                        </script> -->
-                    </div>
-
+                    <div id="map" style="width:100%;height:350px;border-radius: 10px;"></div>
                 </div>
             </div>
 
             <!-- 결과 리스트 출력 -->
-            <div style="margin: 10px 10%">
+            <div style="margin: 10px 10%; display:none">
                 <div class="tab-content shadow-lg mt-5 w-100" style="background-color: rgba(255, 255, 255, 0.4);">
                     <div>
                         <ul>
