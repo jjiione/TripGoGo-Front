@@ -10,23 +10,19 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.5013068, 127.0396597), // 지도의 중심좌표
-        level: 8 // 지도의 확대 레벨
+        level: 9 // 지도의 확대 레벨
     };
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
-fetch("../json/korea-administrative-district.json")
-.then(response => {
-  return response.json();
-})
-  .then(jsondata => console.log(jsondata));
 
 
 // 공공데이터에서 지역구 가져오기
 var serviceKey = "yEDlTnRgLJ6TyA%2B5%2FJVGel5GPAULuQKSnfZzzxUgCdlvG%2BfnI8wYyOfYvmMZMjpFHF%2FlhvqHyavoqE5eWqqjgw%3D%3D";
 let areaUrl = "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=" +
   serviceKey + "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json";
+
 
   fetch(areaUrl, { method: "GET" })
   .then((response) => response.json())
@@ -45,6 +41,32 @@ let areaUrl = "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=
     });
 }
   
+// 세부 지역 검색
+
+
+document.getElementById("search-area1").addEventListener("change", () => {
+  let areaCode = document.getElementById("search-area1").value;
+  let areaUrlDetail = `https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=` +
+    serviceKey + `&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&areaCode=${areaCode}&_type=json`;
+  
+    fetch(areaUrlDetail, { method: "GET" })
+  .then((response) => response.json())
+    .then((data) => makeOption(data));
+  
+    function makeOption(data) {
+      let areas = data.response.body.items.item;
+      console.log(data);
+      let sel = document.getElementById("search-area2");
+      sel.innerHTML = ``;
+      areas.forEach((area) => {
+        let opt = document.createElement("option");
+        opt.setAttribute("value", area.code);
+        opt.appendChild(document.createTextNode(area.name));
+    
+        sel.appendChild(opt);
+      });
+  }
+});
 
 // 카테고리로 검색
 
@@ -58,7 +80,6 @@ var markerList = [];
 
 // var map = new kakao.maps.Map(mapContainer, mapOption);
 document.getElementById("btn-search").addEventListener("click", () => {
-  // window.location.reload();
   let category = document.getElementById("search-type").value;
   
   for (var i = 0; i < markerList.length; i++){
@@ -102,7 +123,5 @@ function displayMarker(place) {
         infowindow.open(map, marker);
     });
 }
-
-  
 });
 
