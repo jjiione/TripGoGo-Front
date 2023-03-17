@@ -10,13 +10,14 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.5013068, 127.0396597), // 지도의 중심좌표
-        level: 9 // 지도의 확대 레벨
+        level: 7 // 지도의 확대 레벨
     };
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
-
+var area1 = "";
+var area2 = "";
 
 // 공공데이터에서 지역구 가져오기
 var serviceKey = "yEDlTnRgLJ6TyA%2B5%2FJVGel5GPAULuQKSnfZzzxUgCdlvG%2BfnI8wYyOfYvmMZMjpFHF%2FlhvqHyavoqE5eWqqjgw%3D%3D";
@@ -90,9 +91,39 @@ document.getElementById("btn-search").addEventListener("click", () => {
 
   
   // 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places(map); 
+  let ps = new kakao.maps.services.Places(map);
+  
+  let location = $("#search-area1 option:checked").text() + $("#search-area2 option:checked").text();
+  
+  console.log(location);
 
-// 카테고리로 은행을 검색합니다
+  // 키워드로 장소를 검색합니다
+
+  let serviceKey = "09a53d4cf09cbe89a1f8ed92cb9a32d8";
+    let searchUrl =
+      "https://dapi.kakao.com/v2/local/search/keyword.json?page=1&size=5&sort=accuracy&query=";
+  searchUrl += `${location}`;
+  console.log(searchUrl);
+  fetch(searchUrl, {
+    method: "GET",
+    headers: {
+      Authorization: "KakaoAK " + serviceKey,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.documents[0].x);
+      console.log(data.documents[0].y);
+      var bounds = new kakao.maps.LatLngBounds();
+
+      
+      bounds.extend(new kakao.maps.LatLng(data.documents[0].y, data.documents[0].x));
+      map.setBounds(bounds);
+      map.setLevel(9);
+    });
+
+
+// 카테고리로 검색합니다
 ps.categorySearch(category, placesSearchCB, {useMapBounds:true}); 
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
