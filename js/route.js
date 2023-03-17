@@ -117,36 +117,55 @@ function makeRouteList(data) {
   // fa-bus-simple
   for (trip of trips) {
     let route = `
-    <div class="tab-content shadow-lg w-100 mb-5" style="background-color:rgba(255, 255, 255, 0.6)">
+    <div class="tab-content shadow-lg w-100 mb-5" style="background-color:rgb(255, 255, 255)">
       <div class="w-100 d-flex align-items-center mb-3">`;
     let desc = ``;
     let totalTime = trip.totalTime;
-    let totalFare = trip.totalFare;
+    let totalFare = trip.fare.regular.totalFare;
     let legs = trip.legs;
     for (leg of legs) {
-      console.log("leg" + leg.sectionTime);
-      console.log("total" + totalTime);
       if (leg.mode == "WALK") {
-        route += `<i class="fa-solid fa-person-walking fa-2x me-2 ms-2"></i>`;
+        route += `<span class="fa-stack fa-2x">
+        <i class="fa-solid fa-circle fa-stack-2x"></i>
+        <i class="fa-solid fa-person-walking fa-stack-1x fa-inverse"></i>
+      </span>`;
         route += `<hr style="width:${
           (leg.sectionTime * 100) / totalTime
-        }%; border:5px dotted gray;"></hr>`;
+        }%; border:5px solid black;"></hr>`;
         desc += `<div class="mt-1">
       <i class="fa-solid fa-person-walking"></i>
       <span>도보${Math.ceil(leg.sectionTime / 60)}분</span></div>`;
-      } else {
-        route += `<i class="fa-solid fa-train-subway fa-2x me-2 ms-2"></i>`;
+      } else if (leg.mode == "TRANSFER") {
         route += `<hr style="width:${Math.ceil(
           (leg.sectionTime * 100) / totalTime
-        )}%; border:5px dotted gray;"></hr>`;
+        )}%; border:5px solid gray;"></hr>`;
+      } else if (leg.mode == "BUS") {
+        route += `<span class="fa-stack fa-2x" style="color:#${leg.routeColor}">
+        <i class="fa-solid fa-circle fa-stack-2x"></i>
+        <i class="fa-solid fa-bus-simple fa-stack-1x fa-inverse"></i>
+      </span>`;
+        route += `<hr style="width:${Math.ceil(
+          (leg.sectionTime * 100) / totalTime
+        )}%; border:5px solid #${leg.routeColor};"></hr>`;
+      } else if (leg.mode == "SUBWAY") {
+        route += `<span class="fa-stack fa-2x" style="color:#${leg.routeColor}">
+        <i class="fa-solid fa-circle fa-stack-2x"></i>
+        <i class="fa-solid fa-bus-simple fa-stack-1x fa-inverse"></i>
+      </span>`;
+        route += `<hr style="width:${Math.ceil(
+          (leg.sectionTime * 100) / totalTime
+        )}%; border:5px solid #${leg.routeColor};"></hr>`;
         desc += `<div class="mt-1">
           <i class="fa-solid fa-train-subway"></i>
           <span>지하철 ${Math.ceil(leg.sectionTime / 60)}분</span></div>`;
       }
     }
     route += `</div>`;
-    route += desc;
+    route += `<div class="mt-1">${Math.ceil(totalTime / 60)}분<div><div>${totalFare}원 환승 | ${
+      trip.transferCount
+    }번 | 도보 ${Math.ceil(trip.walkTime / 60)}분</div>`;
     route += `</div>`;
     document.getElementById("route-result").innerHTML += route;
+    document.getElementById("route-result").style.display = "block";
   }
 }
