@@ -83,6 +83,8 @@ var markerList = [];
 document.getElementById("btn-search").addEventListener("click", () => {
   let category = document.getElementById("search-type").value;
   
+  
+  document.getElementById('placesList').replaceChildren();
   for (var i = 0; i < markerList.length; i++){
     markerList[i].setMap(null);
   }
@@ -129,11 +131,25 @@ ps.categorySearch(category, placesSearchCB, {useMapBounds:true});
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB (data, status, pagination) {
   if (status === kakao.maps.services.Status.OK) {
-        for (var i=0; i<data.length; i++) {
-            displayMarker(data[i]);    
-        }       
+    var listEl = document.getElementById('placesList'),
+    menuEl = document.getElementById('menu_wrap'),
+      fragment = document.createDocumentFragment();
+    // 검색 결과 목록에 추가된 항목들을 제거합니다
+    // removeAllChildNods(listEl);
+    var printList = [];
+
+    for (var i = 0; i < data.length; i++){
+      displayMarker(data[i]);
+      itemEl = getListItem(i, data[i]);
+      printList.push(data[i].place_name);
+      fragment.appendChild(itemEl);
+      } 
+    console.log(printList);        
+    listEl.appendChild(fragment);
+    menuEl.scrollTop = 0;
     }
-}
+  }
+  
 
 // 지도에 마커를 표시하는 함수입니다
 function displayMarker(place) {
@@ -153,6 +169,30 @@ function displayMarker(place) {
         infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
         infowindow.open(map, marker);
     });
+  }
+
+  // 검색결과 항목을 Element로 반환하는 함수입니다
+function getListItem(index, places) {
+
+  var el = document.createElement('li'),
+  itemStr = '<span class="info">' +
+              '   <h5>' + places.place_name + '</h5>';
+
+  if (places.road_address_name) {
+      itemStr += '    <span>' + places.road_address_name + '</span>' +
+                  '   <span>' +  places.address_name  + '</span>';
+  } else {
+      itemStr += '    <span' +  places.address_name  + '</span>'; 
+  }
+            
+    itemStr += '  <span>' + places.phone  + '</span>' +
+              '</span>';           
+  console.log("item :: " + itemStr);
+  el.innerHTML = itemStr;
+  // el.className = 'item';
+
+  return el;
 }
+  
 });
 

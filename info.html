@@ -196,6 +196,8 @@
 
             background: rgba(0, 0, 0, 0);
         }
+
+
     </style>
     <!--
 
@@ -259,7 +261,7 @@ https://templatemo.com/tm-583-festava-live
                 </div>
             </div>
         </nav>
-        <section class="ticket-section section-padding" style="height: calc(100vh - 51px)">
+        <section class="ticket-section section-padding" style="height: calc(100vh - 51px);">
             <div class="section-overlay"></div>
 
             <div class="container" >
@@ -299,28 +301,21 @@ https://templatemo.com/tm-583-festava-live
 
 
             <!-- 지도 부분 -->
-            <div style="margin: 0% 10% 0% 10%">
-                <div class="tab-content shadow-lg mt-5 w-100" style="background-color: rgba(255, 255, 255, 0.4);">
-                    <div id="map" style="width:100%;height:350px;border-radius: 10px;"></div>
-                </div>
-            </div>
+            <div style="margin: 0% 10% 0% 10%;">
+                <div class="tab-content shadow-lg mt-5 w-100 row" 
+                style="background-color: rgba(255, 255, 255, 0.4);">
+                    <div id="map" class="col-8" style="height:55vh;border-radius: 10px;"></div>
+                    <div id="map-list" class="col-4 row"style="margin-left:10px">
+                        <div id = menu_wrap style="border-radius: 10px; background-color : rgba(138, 181, 237, 0.6);overflow:auto;height:55vh">
+                            <ul id="placesList">
 
-            <!-- 결과 리스트 출력 -->
-            <div style="margin: 10px 10%; display:none">
-                <div class="tab-content shadow-lg mt-5 w-100" style="background-color: rgba(255, 255, 255, 0.4);">
-                    <div>
-                        <ul>
-                            <li style="color:black">1</li>
-                            <li style="color:black">2</li>
-                            <li style="color:black">3</li>
-                            <li style="color:black">4</li>
-                        </ul>
-
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
-
+                
             </div>
+
 
 
 
