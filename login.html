@@ -94,7 +94,14 @@ https://templatemo.com/tm-583-festava-live
         </nav>
 
 
-        <section class="ticket-section section-padding">
+        <section class="ticket-section section-padding" style="height:75vh">
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="video/pexels-olya-kobruseva-5236593.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="section-overlay"></div>
 
             <div class="container">
@@ -106,54 +113,19 @@ https://templatemo.com/tm-583-festava-live
                             <h2 class="text-center mb-4">Login</h2>
 
                             <div class="ticket-form-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="ticket-form-name" id="ticket-form-name"
-                                            class="form-control" placeholder="NAME" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="ticket-form-email" id="ticket-form-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address"
-                                            required>
-                                    </div>
-                                </div>
-
-                                <input type="tel" class="form-control" name="ticket-form-phone"
-                                    placeholder="Ph 085-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
-
-                                <h6>Choose Ticket Type</h6>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-control">
-                                            <input class="form-check-input" type="radio" name="TicketForm"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Eary bird $120
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <div class="form-check form-check-radio form-control">
-                                            <input class="form-check-input" type="radio" name="TicketForm"
-                                                id="flexRadioDefault2">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Standard $240
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <input type="number" name="ticket-form-number" id="ticket-form-number"
-                                    class="form-control" placeholder="Number of Tickets" required>
+                                    class="form-control" placeholder="Id" required>
 
-                                <textarea name="ticket-form-message" rows="3" class="form-control"
-                                    id="ticket-form-message" placeholder="Additional Request"></textarea>
+                                <input type="number" name="ticket-form-number" id="ticket-form-number"
+                                    class="form-control" placeholder="PASSWORD" required>
+
 
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                    <button type="submit" class="form-control">Buy Ticket</button>
+                                    <button type="submit" class="form-control">Login</button>
+                                </div>
+                                <div class="col-lg-4 col-md-10 col-8 mx-auto" style="margin-top: 20px;">
+                                    <button type="submit" class="form-control" style="background-color: black;">Register</button>
                                 </div>
                             </div>
                         </form>
@@ -169,7 +141,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        <h3 class="text-white mb-lg-0">Use TripGoGo for your Trip</h3>
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -225,20 +197,17 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
+                            <a href="#" class="site-footer-link">Info</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
+                            <a href="#" class="site-footer-link">Route</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
+                            <a href="#" class="site-footer-link">Trip</a>
                         </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -247,13 +216,13 @@ https://templatemo.com/tm-583-festava-live
 
                     <p class="text-white d-flex mb-1">
                         <a href="tel: 090-080-0760" class="site-footer-link">
-                            090-080-0760
+                            010-0000-0000
                         </a>
                     </p>
 
                     <p class="text-white d-flex">
                         <a href="mailto:hello@company.com" class="site-footer-link">
-                            hello@company.com
+                            hello@ssafy.com
                         </a>
                     </p>
                 </div>
