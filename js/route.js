@@ -10,7 +10,7 @@ var arrivalY;
 
 document.getElementById("btn-search-departures").addEventListener("click", function () {
   //index page 로딩 후 전국의 시도 설정
-  let serviceKey = "09a53d4cf09cbe89a1f8ed92cb9a32d8";
+  let serviceKey = "4d808b2eea3ad1fde7f7c7e442ca91fc";
   let searchUrl =
     "https://dapi.kakao.com/v2/local/search/keyword.json?page=1&size=5&sort=accuracy&query=";
   let keyword = document.getElementById("search-departures").value;
@@ -34,7 +34,7 @@ document.getElementById("btn-search-departures").addEventListener("click", funct
 
 document.getElementById("btn-search-arrivals").addEventListener("click", function () {
   //index page 로딩 후 전국의 시도 설정
-  let serviceKey = "09a53d4cf09cbe89a1f8ed92cb9a32d8";
+  let serviceKey = "4d808b2eea3ad1fde7f7c7e442ca91fc";
   let searchUrl =
     "https://dapi.kakao.com/v2/local/search/keyword.json?page=1&size=5&sort=accuracy&query=";
   let keyword = document.getElementById("search-arrivals").value;
