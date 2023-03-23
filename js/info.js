@@ -20,7 +20,7 @@ var area1 = "";
 var area2 = "";
 
 // 공공데이터에서 지역구 가져오기
-var serviceKey = "yEDlTnRgLJ6TyA%2B5%2FJVGel5GPAULuQKSnfZzzxUgCdlvG%2BfnI8wYyOfYvmMZMjpFHF%2FlhvqHyavoqE5eWqqjgw%3D%3D";
+var serviceKey = "z3vgw8Qjex43dubAYmTKS%2BYTCarK5JjMqfW6Da3cYCNTdA2FqJThjd15mnJY6lqmPFSCIehjR2Jex%2F71IGfBvw%3D%3D";
 let areaUrl = "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=" +
   serviceKey + "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json";
 
