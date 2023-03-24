@@ -58,3 +58,38 @@
   margin-right: 4px;
   height: 28px;
 }
+
+.view-content {
+  margin-top: 10px;
+  flex-direction: column;
+  display: flex;
+  box-sizing: border-box;
+  font-size: 16px !important;
+  font-weight: 200;
+  /* justify-content: space-around; */
+}
+
+.view-container {
+  flex-shrink: 0;
+  width: 100%;
+  margin-bottom: 16px;
+  position: relative;
+  border-radius: 8px;
+  isolation: isolate;
+  transition: all 0.3s ease;
+  padding: 12px;
+  border: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.view-item {
+  width: 100%;
+}
+
+hr {
+  color: grey;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
