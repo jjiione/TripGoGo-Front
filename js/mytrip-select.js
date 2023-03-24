@@ -52,9 +52,10 @@ function makeList(data) {
     title.appendChild(document.createTextNode(area.place_name));
     let info = document.createElement("div");
     info.setAttribute("class", "trip-select-info");
-    let writer = document.createElement("span");
-    // writer.appendChild(document.createTextNode(area.address.region_2depth_name));
-    info.appendChild(writer);
+    let date = document.createElement("span");
+    date.setAttribute("class", "date");
+    date.appendChild(document.createTextNode(area.category_group_name));
+    info.appendChild(date);
     content.appendChild(title);
     content.appendChild(info);
     item.appendChild(content);
