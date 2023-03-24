@@ -229,13 +229,14 @@ strong {
   opacity: 0.35;
 }
 
-.section-overlay + .container {
+.section-overlay+.container {
   position: relative;
 }
 
 #route-result {
   display: none;
 }
+
 .tab-content {
   background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
@@ -546,7 +547,8 @@ strong {
   TICKET               
 -----------------------------------------*/
 .ticket-section {
-  background-image: url("../images/pexels-heesang-park-13716545.jpg");
+  /* background-image: url("../images/pexels-heesang-park-13716545.jpg"); */
+  background-color: rgba(0, 0, 0, 0.9);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -678,6 +680,7 @@ strong {
 .search-bar input::placeholder {
   color: white;
 }
+
 .search-bar button {
   border: 0;
   border-radius: 50%;
@@ -707,6 +710,7 @@ strong {
   background-position: center;
   background-size: cover;
 }
+
 .table-responsive {
   filter: drop-shadow(2px 2px 4px #606060);
 }
@@ -742,7 +746,7 @@ strong {
   border-bottom-color: transparent;
 }
 
-.schedule-table th + td {
+.schedule-table th+td {
   border-bottom: 0;
 }
 
@@ -962,6 +966,7 @@ strong {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -972,18 +977,22 @@ strong {
 -----------------------------------------*/
 
 #route-result::-webkit-scrollbar {
-  width: 20px; /* 스크롤바의 너비 */
+  width: 20px;
+  /* 스크롤바의 너비 */
 }
 
 #route-result::-webkit-scrollbar-thumb {
-  height: 30%; /* 스크롤바의 길이 */
-  background: rgba(255, 255, 255, 0.5); /* 스크롤바의 색상 */
+  height: 30%;
+  /* 스크롤바의 길이 */
+  background: rgba(255, 255, 255, 0.5);
+  /* 스크롤바의 색상 */
 
   border-radius: 10px;
 }
 
 #route-result::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1); /*스크롤바 뒷 배경 색상*/
+  background: rgba(0, 0, 0, 0.1);
+  /*스크롤바 뒷 배경 색상*/
 }
 
 /*---------------------------------------
@@ -1095,34 +1104,33 @@ strong {
   font-weight: 300;
   font-style: normal;
   src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix") format("embedded-opentype"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2") format("woff2"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff") format("woff"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf") format("truetype");
   font-display: swap;
   unicode-range: U+AC00-D7A3;
 }
+
 @font-face {
   font-family: "GmarketSans";
   font-weight: 500;
   font-style: normal;
   src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix") format("embedded-opentype"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2") format("woff2"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff") format("woff"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf") format("truetype");
   font-display: swap;
   unicode-range: U+AC00-D7A3;
 }
+
 @font-face {
   font-family: "GmarketSans";
   font-weight: 700;
   font-style: normal;
   src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot");
-  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix") format("embedded-opentype"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2") format("woff2"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff") format("woff"),
     url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf") format("truetype");
