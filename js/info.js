@@ -88,14 +88,14 @@ document.getElementById("btn-search").addEventListener("click", () => {
   } else {
     let category = document.getElementById("search-type").value;
   
-    console.log("start :: 0");
+    // console.log("start :: 0");
     document.getElementById('placesList').replaceChildren();
-    console.log("remove child :: 1");
+    // console.log("remove child :: 1");
   for (var i = 0; i < markerList.length; i++){
     markerList[i].setMap(null);
     }
     
-    console.log("remove marker :: 2");
+    // console.log("remove marker :: 2");
 
   var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
