@@ -32,7 +32,8 @@
   min-width: 510px;
   box-sizing: border-box;
   height: calc(100vh - 82.97px);
-  background-image: url("../images/pexels-pixabay-531767.jpg");
+  /* background-image: url("../images/pexels-pixabay-531767.jpg"); */
+  background-image: url("../images/bigsur.jpg");
   background-size: 100vw;
 }
 
