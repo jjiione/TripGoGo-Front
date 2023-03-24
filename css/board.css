@@ -26,7 +26,8 @@
   width: 100%;
   box-sizing: border-box;
   height: calc(100vh - 82.97px);
-  background-image: url("../images/pexels-heesang-park-13716545.jpg");
+  background-image: url("../images/pexels-pixabay-531767.jpg");
+  background-size: 100vw;
 }
 
 .board-item {
