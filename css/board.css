@@ -6,9 +6,9 @@
 .wrap {
   width: 100%;
   padding: 20px;
-  background: #fff;
   border-radius: 10px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .board {
@@ -17,7 +17,7 @@
   padding-bottom: 10px;
   position: relative;
   max-width: 1300px;
-  min-width: 450px;
+  min-width: 300px;
   margin: 0px auto;
   box-sizing: border-box;
 }
@@ -26,7 +26,7 @@
   width: 100%;
   box-sizing: border-box;
   height: calc(100vh - 82.97px);
-  background-color: yellow;
+  background-image: url("../images/pexels-heesang-park-13716545.jpg");
 }
 
 .board-item {
@@ -40,6 +40,9 @@
   padding: 12px;
   border: 1px solid lightgrey;
   display: flex;
+  height: 180px;
+  justify-content: space-between;
+  background-color: white;
 }
 
 .board-item > a {
@@ -52,18 +55,37 @@
 
 .date,
 .writer {
-  font-size: 14px;
+  font-size: 12px;
   border: 1px solid lightgrey;
-  border-radius: 50px;
+  border-radius: 10px;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 4px;
   font-weight: 400;
 }
 
-#board-title {
+/* #board-title {
   font-size: 24px;
   margin-bottom: 10px;
   margin-left: 4px;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  padding: 8px;
+  font-weight: 200;
+} */
+
+#board-title {
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  font-size: 16px;
+  margin-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  line-height: 28px;
+  height: 28px;
+  background-color: #f0f0f0;
 }
 
 #btn-write {
@@ -71,8 +93,8 @@
   box-sizing: border-box;
   border: 1px solid lightgrey;
   font-weight: 200;
-  height: 28px;
   margin-right: 4px;
+  height: 28px;
 }
 
 .boardlist-header {
@@ -93,45 +115,55 @@
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   cursor: default;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 
 .board-info {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 4px;
+  height: 10px;
 }
 
 .board-thumbnail {
-  width: 40%;
-  overflow: hidden;
   position: relative;
   background: #fff;
   isolation: isolate;
-  padding: 10px;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .board-thumbnail > img {
+  width: 156px;
   border-radius: 10px;
-  width: 100%;
   transition: transform 0.3s ease;
 }
 
 .board-content {
   padding-top: 10px;
   padding-left: 10px;
+  padding-right: 10px;
   flex-direction: column;
   display: flex;
-  padding-bottom: 10px;
   box-sizing: border-box;
+  height: 160px;
+  /* justify-content: space-around; */
 }
 
 .board-summary {
   margin-top: 20px;
-  align-items: end;
   box-sizing: border-box;
 }
 
-#title {
-  font-size: 40px;
+.title {
+  font-size: 20px;
+  color: black;
+}
+
+.title:hover {
+  color: #ee5507;
+}
+
+.board-preview {
+  margin-top: auto;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
