@@ -1,0 +1,60 @@
+.write_background {
+  width: 100%;
+  box-sizing: border-box;
+  height: calc(100vh - 82.97px);
+  background-image: url("../images/pexels-heesang-park-13716545.jpg");
+}
+
+.wrap {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.write {
+  height: calc(100vh - 82.97px);
+  position: relative;
+  max-width: 1300px;
+  min-width: 300px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.write-container {
+  margin: auto 0px;
+}
+
+.write-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+#board-title {
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  font-size: 16px;
+  margin-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  line-height: 28px;
+  height: 28px;
+  background-color: #f0f0f0;
+}
+
+#btn-write {
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  margin-right: 4px;
+  height: 28px;
+}

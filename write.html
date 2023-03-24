@@ -26,8 +26,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
-    <link href="css/board.css" rel="stylesheet" />
-    <link href="css/mac-style.css" rel="stylesheet" />
+    <link href="css/write.css" rel="stylesheet" />
 
     <link href="css/templatemo-festava-live.css" rel="stylesheet" />
     <!--
@@ -80,157 +79,45 @@ https://templatemo.com/tm-583-festava-live
           </div>
         </div>
       </nav>
-      <div class="board_background">
-        <div class="board">
-          <div class="boardlist wrap">
-            <div class="boardlist-header">
-              <span id="board-title">게시판</span>
-              <button id="btn-write" onclick="location.href='write.html'">글쓰기</button>
+      <div class="write_background">
+        <div class="write">
+          <div class="write-container wrap">
+            <div class="write-header">
+              <span id="board-title">글쓰기</span>
+              <button id="btn-write" onclick="location.href='board.html'">취소</button>
             </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">Knapsack 0/1</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary"
-                    >홍익대학교 김선일 교수님의 운영체제 강의 (2021)를 정리했습니다. 교재 - MODERN
-                    OPERATING SYSTEMS Fourth Edition ANDREW S. TANENBAUM 운영체제란? 하드웨어와
-                    어플리케이션 사이에 있는 소프트웨어 기본적으로 컴퓨터 시스템에서 어플리케이션이
-                    실행된다는 것은 컴퓨터 시스템이 하드웨어를 사용한다는 것이다. 운영체제는
-                    어플리케이션이 하드웨어에 접근하기 위한 인터페이스와 서비스를 제공한다. 따라서
-                    운영체제는 하드웨어에 접근할 수 있다. (일반 어플리케이션은 접근할 수 없다.)
-                    어플리케이션이 하드웨어에 접근하기 위해선 운영체제를 호출해야한다. (System call)
-                    CPU는 기본적으로 두가지 모드로 동작한다. 커널모드 : 모든 하드웨어에 접근할 수
-                    있고, 모든 명령..</span
-                  >
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">Knapsack 0/1</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary"
-                    >홍익대학교 김선일 교수님의 운영체제 강의 (2021)를 정리했습니다. 교재 - MODERN
-                    OPERATING SYSTEMS Fourth Edition ANDREW S. TANENBAUM 운영체제란? 하드웨어와
-                    어플리케이션 사이에 있는 소프트웨어 기본적으로 컴퓨터 시스템에서 어플리케이션이
-                    실행된다는 것은 컴퓨터 시스템이 하드웨어를 사용한다는 것이다. 운영체제는
-                    어플리케이션이 하드웨어에 접근하기 위한 인터페이스와 서비스를 제공한다. 따라서
-                    운영체제는 하드웨어에 접근할 수 있다. (일반 어플리케이션은 접근할 수 없다.)
-                    어플리케이션이 하드웨어에 접근하기 위해선 운영체제를 호출해야한다. (System call)
-                    CPU는 기본적으로 두가지 모드로 동작한다. 커널모드 : 모든 하드웨어에 접근할 수
-                    있고, 모든 명령..</span
-                  >
+            <form
+              class="custom-form contact-form mb-5 mb-lg-0"
+              action="#"
+              method="post"
+              role="form"
+            >
+              <div class="contact-form-body">
+                <input
+                  type="text"
+                  name="contact-company"
+                  id="contact-company"
+                  class="form-control"
+                  placeholder="제목"
+                  style="font-weight: 300"
+                  required
+                />
+                <textarea
+                  name="contact-message"
+                  rows="20"
+                  class="form-control"
+                  id="contact-message"
+                  placeholder="내용"
+                  style="font-weight: 300"
+                ></textarea>
+                <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                  <button type="submit" class="form-control">완료</button>
                 </div>
               </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">하하하하몇글자써지는지써볼까</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary">하이룽</span>
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">하하하하몇글자써지는지써볼까</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary">하이룽</span>
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">하하하하몇글자써지는지써볼까</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary">하이룽</span>
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">하하하하몇글자써지는지써볼까</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary">하이룽</span>
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
-            <div class="board-item">
-              <div class="board-content">
-                <a href="/9" class="link-article">
-                  <strong class="title">하하하하몇글자써지는지써볼까</strong>
-                </a>
-                <div class="board-info">
-                  <span class="writer">지은이에용</span>
-                  <span class="date">2022.02.05</span>
-                </div>
-                <div class="board-preview">
-                  <span class="board-summary">하이룽</span>
-                </div>
-              </div>
-              <div class="board-thumbnail">
-                <img src="./images/noimg.png" alt="" />
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-      <!-- ©2015 Johannes Jakob
-     Made with <3 in Germany -->
     </main>
     <footer class="site-footer">
       <div class="site-footer-top">

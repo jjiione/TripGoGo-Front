@@ -1,6 +1,10 @@
+* {
+  background-attachment: fixed;
+}
 .boardlist {
   display: flex;
   flex-wrap: wrap;
+  margin: auto 0px;
 }
 
 .wrap {
@@ -12,20 +16,22 @@
 }
 
 .board {
-  height: calc(100vh - 82.97px);
+  /* height: calc(100vh - 82.97px); */
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   position: relative;
   max-width: 1300px;
   min-width: 300px;
   margin: 0px auto;
   box-sizing: border-box;
+  display: flex;
 }
 
 .board_background {
   width: 100%;
+  min-width: 510px;
   box-sizing: border-box;
-  height: calc(100vh - 82.97px);
+  /* height: calc(100vh - 82.97px); */
   background-image: url("../images/pexels-pixabay-531767.jpg");
   background-size: 100vw;
 }
