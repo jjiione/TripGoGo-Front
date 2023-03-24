@@ -49,6 +49,7 @@ function makeList(data) {
     let content = document.createElement("div");
     content.setAttribute("class", "trip-select-content");
     let title = document.createElement("span");
+    title.setAttribute("class", "title");
     title.appendChild(document.createTextNode(area.place_name));
     let info = document.createElement("div");
     info.setAttribute("class", "trip-select-info");
