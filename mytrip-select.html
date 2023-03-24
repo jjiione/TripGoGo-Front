@@ -29,6 +29,7 @@
     <link href="css/board.css" rel="stylesheet" />
     <link href="css/mac-style.css" rel="stylesheet" />
     <link href="css/write.css" rel="stylesheet" />
+    <link href="css/mytrip-select.css" rel="stylesheet" />
 
     <link href="css/templatemo-festava-live.css" rel="stylesheet" />
     <!--
@@ -111,33 +112,48 @@ https://templatemo.com/tm-583-festava-live
             <div class="content">
               <div class="write">
                 <div class="write-container wrap">
-                  <form
-                    class="custom-form contact-form mb-5 mb-lg-0"
-                    action="#"
-                    method="post"
-                    role="form"
-                  >
                     <div class="contact-form-body">
-                      <input
-                        type="text"
-                        name="contact-company"
-                        id="contact-company"
-                        class="form-control"
-                        placeholder="제목"
-                        style="font-weight: 300"
-                        required
-                      />
-                      <textarea
-                        name="contact-message"
-                        rows="20"
-                        class="form-control"
-                        id="contact-message"
-                        placeholder="내용"
-                        style="font-weight: 300"
-                      ></textarea>
-                      <button type="submit" id="btn-submit" class="form-control">완료</button>
-                    </div>
-                  </form>
+                        <input
+                          type="text"
+                          name="select-spot"
+                          id="select-spot"
+                          class="form-control"
+                          placeholder="관광지/맛집/숙소 검색"
+                          style="font-weight: 300"
+                          onkeypress="searchSpot(event)"
+                          required
+                        />
+                        <div id="trip-select-list">
+                          <!-- <div class="trip-select-item">
+                            <div class="trip-select-content">
+                              <span class="title">멀티캠퍼스 역삼</span>
+                              <div class="trip-select-info">
+                                <span class="writer">교육기관</span>
+                                <span class="date">서울 역삼</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="trip-select-item">
+                            <div class="trip-select-content">
+                              <span class="title">하하하하몇글자써지는지써볼까</span>
+                              <div class="trip-select-info">
+                                <span class="writer">지은이에용</span>
+                                <span class="date">2022.02.05</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="trip-select-item">
+                            <div class="trip-select-content">
+                              <span class="title">하하하하몇글자써지는지써볼까</span>
+                              <div class="trip-select-info">
+                                <span class="writer">지은이에용</span>
+                                <span class="date">2022.02.05</span>
+                              </div>
+                            </div>
+                          </div> -->
+                        </div>
+                        <div id="map" style="width: 100%; height: 350px"></div>
+                      <button type="submit" id="btn-submit" class="form-control mt-3">추가</button>
                 </div>
               </div>
               <!-- window content -->
@@ -287,4 +303,9 @@ https://templatemo.com/tm-583-festava-live
       </div>
     </footer>
   </body>
+  <script
+    type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=24073e84e8ac256ed85efd18c525e7a9"
+  ></script>
+  <script src="js/mytrip-select.js"></script>
 </html>
