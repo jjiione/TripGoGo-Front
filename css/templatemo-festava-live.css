@@ -546,9 +546,18 @@ strong {
 /*---------------------------------------
   TICKET               
 -----------------------------------------*/
-.ticket-section {
+.login-section {
   /* background-image: url("../images/pexels-heesang-park-13716545.jpg"); */
   background-color: rgba(0, 0, 0, 0.9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 130px;
+}
+
+.ticket-section {
+  background-image: url("../images/pexels-heesang-park-13716545.jpg");
+  /* background-color: rgba(0, 0, 0, 0.9); */
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
