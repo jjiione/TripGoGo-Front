@@ -31,7 +31,7 @@
   width: 100%;
   min-width: 510px;
   box-sizing: border-box;
-  height: calc(100vh - 82.97px);
+  min-height: calc(100vh - 82.97px);
   /* background-image: url("../images/pexels-pixabay-531767.jpg"); */
   background-image: url("../images/bigsur.jpg");
   background-size: 100vw;
@@ -137,12 +137,16 @@
   isolation: isolate;
   box-sizing: border-box;
   height: 100%;
+  overflow: hidden;
+  width: 156px;
+  height: 156px;
+  border-radius: 10px;
 }
 
 .board-thumbnail > img {
-  width: 156px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .board-content {

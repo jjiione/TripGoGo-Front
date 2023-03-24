@@ -20,7 +20,7 @@ span {
 
 .window {
   background: #fff;
-  max-width: 1300px;
+  width: 1000px;
   min-width: 300px;
   margin: auto;
   border: 1px solid #acacac;
