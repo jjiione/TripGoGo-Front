@@ -10,7 +10,7 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.5013068, 127.0396597), // 지도의 중심좌표
-        level: 7 // 지도의 확대 레벨
+        level: 5 // 지도의 확대 레벨
     };
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
@@ -40,11 +40,9 @@ let areaUrl = "https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=
   
       sel.appendChild(opt);
     });
-}
-  
+} 
+
 // 세부 지역 검색
-
-
 document.getElementById("search-area1").addEventListener("change", () => {
   let areaCode = document.getElementById("search-area1").value;
   let areaUrlDetail = `https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=` +
@@ -81,13 +79,23 @@ var markerList = [];
 
 // var map = new kakao.maps.Map(mapContainer, mapOption);
 document.getElementById("btn-search").addEventListener("click", () => {
-  let category = document.getElementById("search-type").value;
+  let areaCode = document.getElementById("search-area1").value;
+  let categoryCode = document.getElementById("search-type").value;
+  if (areaCode == 0) {
+    alert("지역을 선택하세요");
+  } else if(categoryCode == 0){
+    alert("유형을 선택하세요");
+  } else {
+    let category = document.getElementById("search-type").value;
   
-  
-  document.getElementById('placesList').replaceChildren();
+    console.log("start :: 0");
+    document.getElementById('placesList').replaceChildren();
+    console.log("remove child :: 1");
   for (var i = 0; i < markerList.length; i++){
     markerList[i].setMap(null);
-  }
+    }
+    
+    console.log("remove marker :: 2");
 
   var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
@@ -136,6 +144,10 @@ function placesSearchCB (data, status, pagination) {
       fragment = document.createDocumentFragment();
     // 검색 결과 목록에 추가된 항목들을 제거합니다
     // removeAllChildNods(listEl);
+
+    if (data.length == 0) { // 데이터가 없을 때
+      
+    }
     var printList = [];
 
     for (var i = 0; i < data.length; i++){
@@ -193,6 +205,10 @@ function getListItem(index, places) {
 
   return el;
 }
+  }
+
+
+  
   
 });
 
