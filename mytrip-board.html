@@ -8,8 +8,12 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <script src="https://kit.fontawesome.com/d4a4244bd2.js" crossorigin="anonymous"></script>
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c320326b2ad2dd588de2423a35a93637"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+
     <title>TripGoGo-MyTrip</title>
 
     <!-- CSS FILES -->
@@ -45,22 +49,22 @@ https://templatemo.com/tm-583-festava-live
             border-radius: 10px;
         }
 
-        .img{
+        .img {
             object-fit: cover;
         }
-        
-        li{
+
+        li {
             list-style: none;
         }
 
-        .font2{
-            font-size: 10px; 
+        .font2 {
+            font-size: 10px;
             text-align: center;
             margin-top: 5px;
         }
 
-        .font1{
-            font-size: 15px; 
+        .font1 {
+            font-size: 15px;
             text-align: center;
             margin-top: 10px;
         }
@@ -122,53 +126,69 @@ https://templatemo.com/tm-583-festava-live
                                 <!-- zoom button link -->
                             </div>
                         </div>
-                        Create your Trip
+                        MyTrip List
                         <!-- window title -->
                     </div>
                     <!-- 여기서부터 내용 작성 부분-->
+
+
+                    <div class="container" style="display: flex; justify-content: center; margin-top: 20px;">
+                        <div id="map" style="width:85%;height:350px; "></div>
+
+
+                    </div>
+
+
+
                     <div class="content">
-                        <div class="container" style="margin:6vh 0vh">
+                        <div class="container" style="margin:3vh 0vh">
                             <div class="row justify-content-center">
-                                <div class="col-1" style="display:flex; justify-content: center; text-align: center; align-items: center;">
-                                    <form type="button"action=""><i class="fa-solid fa-angle-left"></i></form>
+                                <div class="col-1"
+                                    style="display:flex; justify-content: center; text-align: center; align-items: center;">
+                                    <form type="button" action=""><i class="fa-solid fa-angle-left"></i></form>
                                 </div>
-                                <div class="col-5" style="border:solid 1px gray;height: 200px; border-radius: 10px; overflow: auto;">
+                                <div class="col-5"
+                                    style="border:solid 1px gray;height: 200px; border-radius: 10px; overflow: auto;">
                                     <div class="row" style="height: 100%; width: 100%; padding:10px 0px">
                                         <div class="col-7">
-                                            <img src="./images/pexels-heesang-park-13716545.jpg" alt="" style= "height:100%; width:100%; border-radius:10px" >
+                                            <img src="./images/pexels-heesang-park-13716545.jpg" alt=""
+                                                style="height:100%; width:100%; border-radius:10px">
                                         </div>
                                         <div class="col" style="overflow: auto;">
-                                            <div class="row justify-content-center" style="font-size: large;"> 남산서울타워</div>
+                                            <div class="row justify-content-center" style="font-size: large;"> 남산서울타워
+                                            </div>
                                             <div class="row font1">Location : </div>
-                                            <div class="row justify-content-center font2">서울특별시 용산구 남산공원길 105 남산서울타워</div>
+                                            <div class="row justify-content-center font2">서울특별시 용산구 남산공원길 105 남산서울타워
+                                            </div>
                                             <div class="row font1">DATE :</div>
                                             <div class="row justify-content-center font2"> 2023.03.30</div>
 
                                         </div>
-                                        
+
                                     </div>
 
                                 </div>
-                                <div class="col-1" style="display:flex; justify-content: center; text-align: center; align-items: center;">
-                                    <form type="button"action=""><i class="fa-solid fa-angle-right"></i></form>
+                                <div class="col-1"
+                                    style="display:flex; justify-content: center; text-align: center; align-items: center;">
+                                    <form type="button" action=""><i class="fa-solid fa-angle-right"></i></form>
                                 </div>
-                                
-                            </div>
-
-                            
-
-
-
 
                             </div>
+
+
+
+
+
 
                         </div>
-                        
-                        <!-- window content -->
+
                     </div>
+
+                    <!-- window content -->
                 </div>
             </div>
-            <!-- ©2015 Johannes JakobMade with <3 in Germany -->
+        </div>
+        <!-- ©2015 Johannes JakobMade with <3 in Germany -->
         </div>
     </main>
     <footer class="site-footer">
@@ -310,6 +330,55 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab875d88d46e8c95321681c7d548bd5c&libraries=clusterer"></script>
+
+    <script>
+        var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
+            center: new kakao.maps.LatLng(36.2683, 127.6358), // 지도의 중심좌표 
+            level: 14 // 지도의 확대 레벨 
+        });
+
+        // 마커 클러스터러를 생성합니다 
+        var positions = [
+        {
+            title: '안양역', 
+            "lat": 37.402707,
+            "lng": 126.922044
+        },
+        {
+            title: '안양역 주위 1', 
+            "lat": 37.400707,
+            "lng": 126.920044
+        },
+        {
+            title: '안양역 주위 2', 
+            "lat": 37.403007,
+            "lng": 126.925044
+        },
+        {
+            title: '안양역 주위 3',
+            "lat": 37.405707,
+            "lng": 126.925044
+        }
+    ];
+		
+		
+   var markers = positions.map(function(position) {  // 마커를 배열 단위로 묶음
+        return new kakao.maps.Marker({
+            position : new kakao.maps.LatLng(position.lat, position.lng)
+        });
+    });
+		
+    var clusterer = new kakao.maps.MarkerClusterer({
+            map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+            averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+            minLevel: 5, // 클러스터 할 최소 지도 레벨 
+            markers: markers // 클러스터에 마커 추가
+    });
+    </script>
+
 </body>
 
 </html>
