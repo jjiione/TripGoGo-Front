@@ -76,6 +76,7 @@ var imageSrc = '../images/location-dot-solid.png', // 마커이미지의 주소�
 var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
 var markerList = [];
+var printList = [];
 
 // var map = new kakao.maps.Map(mapContainer, mapOption);
 document.getElementById("btn-search").addEventListener("click", () => {
@@ -148,8 +149,8 @@ function placesSearchCB (data, status, pagination) {
     if (data.length == 0) { // 데이터가 없을 때
       
     }
-    var printList = [];
-
+    
+    printList = [];
     for (var i = 0; i < data.length; i++){
       displayMarker(data[i]);
       itemEl = getListItem(i, data[i]);
@@ -187,18 +188,18 @@ function displayMarker(place) {
 function getListItem(index, places) {
 
   var el = document.createElement('li'),
-  itemStr = '<span class="info">' +
-              '   <h5>' + places.place_name + '</h5>';
+  itemStr = '<div>' +
+              '   <div class="list-title">' + places.place_name + '</div>';
 
   if (places.road_address_name) {
-      itemStr += '    <span>' + places.road_address_name + '</span>' +
-                  '   <span>' +  places.address_name  + '</span>';
+      itemStr += '    <div class="list-content">' + places.road_address_name + '</div>' +
+                  '   <div class="list-content">' +  places.address_name  + '</div>';
   } else {
-      itemStr += '    <span' +  places.address_name  + '</span>'; 
+      itemStr += '    <div class="list-content">' +  places.address_name  + '</div>'; 
   }
             
-    itemStr += '  <span>' + places.phone  + '</span>' +
-              '</span>';           
+    itemStr += '  <div class="list-content">' + places.phone  + '</div>' +
+              '</div>';           
   console.log("item :: " + itemStr);
   el.innerHTML = itemStr;
   // el.className = 'item';

@@ -198,9 +198,20 @@
         }
 
         #placesList>li{
-            border: solid 1px rgba(42, 80, 131, 0.8);
             border-radius: 10px;
             margin-top: 10px;
+            list-style: none;
+        }
+
+        .list-title{
+            font-size: 20px;
+            color: black;
+        }
+
+        .list-content{
+            font-size: 15px;
+            color: black;
+            text-indent: 15px;
         }
 
 
@@ -298,7 +309,7 @@ https://templatemo.com/tm-583-festava-live
                                 <option  value="CE7" class="options">카페</option>
                             </select>
                         </div>
-                        <button class="me-3 btn" id="btn-search" type="submit">Find</button>
+                        <button class="me-3 btn" id="btn-search" type="submit"> Find</button>
                         <!-- 관광지 검색 end -->
                     </div>
 
@@ -311,10 +322,10 @@ https://templatemo.com/tm-583-festava-live
             <div style="margin: 0% 10% 0% 10%;">
                 <div class="tab-content shadow-lg mt-5 w-100 row" 
                 style="background-color: rgba(255, 255, 255, 0.4);">
-                    <div id="map" class="col-8" style="height:55vh;border-radius: 10px;"></div>
-                    <div id="map-list" class="col-4 row"style="margin-left:10px">
-                        <div id = menu_wrap style="border-radius: 10px; background-color : rgba(138, 181, 237, 0.6);overflow:auto;height:55vh">
-                            <ul id="placesList">
+                    <div id="map" class="col-8" style="height:55vh;border-radius: 10px; margin:0px 0px"></div>
+                    <div id="map-list" class="col-4 row">
+                        <div id = menu_wrap style="border-radius: 10px; overflow:auto;height:55vh">
+                            <ul id="placesList" style="padding:0px 0px; margin-left: 40px;">
 
                             </ul>
                         </div>
