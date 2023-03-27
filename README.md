@@ -70,6 +70,31 @@
 <img src = "./images/route2.png" width="600" height="370">
 <br>
 
+### 게시판
+- 여행 후기 게시판
+#### 게시글 리스트
+<img src = "./READMEImg/board.PNG" width="600" height="370"> 
+
+#### 게시글 작성
+<img src = "./READMEImg/write.PNG" width="600" height="370"> 
+
+#### 게시글 화면
+<img src = "./READMEImg/view.PNG" width="600" height="370"> 
+
+### Mytrip
+- 날짜별로 여행 계획을 짤 수 있다.
+
+#### 선택 화면
+- 방문할 장소 검색 후 선택
+<img src = "./READMEImg/mytrip-select.PNG" width="600" height="370"> 
+<img src = "./READMEImg/mytrip-select2.PNG" width="600" height="370"> 
+<img src = "./READMEImg/mytrip-select3.PNG" width="600" height="370"> 
+
+#### 여행 계획 뷰
+- 날짜별 여행 계획을 볼 수 있다.
+<img src = "./READMEImg/mytrip-view1.PNG" width="600" height="370"> 
+<img src = "./READMEImg/mytrip-view2.PNG" width="600" height="370"> 
+
 
 <br>
 
