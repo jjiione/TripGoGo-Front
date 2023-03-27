@@ -84,6 +84,16 @@
 ### Mytrip
 - 날짜별로 여행 계획을 짤 수 있다.
 
+#### 여행 계획 리스트
+- 여행 계획 리스트를 볼 수 있다.
+<img src = "./READMEImg/mytrip-board.PNG" width="600" height="370"> 
+
+
+#### 여행 계획 생성
+- 여행 계획을 생성 할 수 있다.
+<img src = "./READMEImg/mytrip-create.PNG" width="600" height="370"> 
+
+
 #### 선택 화면
 - 방문할 장소 검색 후 선택
 <img src = "./READMEImg/mytrip-select.PNG" width="600" height="370"> 
