@@ -33,12 +33,32 @@
 # :memo: 웹 페이지
 ### Main Page
 - Main Page
-<img src = "./images/mainPage.png" width="600" height="370">
+<img src = "./READMEImg/mainPage.PNG" width="600" height="370">
 <br><br>
 
-### Info
+### Info - 카페고리 별 관광지 조회
 - 관광지, 카페, 음식점 정보 확인 가능
-<img src = "./images/info.png" width="600" height="370">
+<img src = "./READMEImg/InfoPage.PNG" width="600" height="370">
+<br><br>
+
+### 회원 관리 페이지
+- 회원 정보를 확인 할 수 있는 페이지
+<img src = "./READMEImg/Mypage.PNG" width="600" height="370">
+<br><br>
+
+### 로그인 페이지
+- 로그인 페이지
+<img src = "./READMEImg/LoginPage.PNG" width="600" height="370">
+<br><br>
+
+### 회원가입 페이지
+- 회원 가입을 할 수 있는 페이지
+<img src = "./READMEImg/RegisterPage.PNG" width="600" height="370">
+<br><br>
+
+### 회원 관리 페이지
+- 회원 정보를 수정할 수 있는 페이지
+<img src = "./READMEImg/MyPageChange.PNG" width="600" height="370">
 <br><br>
 
 ### Route
