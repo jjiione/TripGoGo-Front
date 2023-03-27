@@ -1,0 +1,150 @@
+* {
+  background-attachment: fixed;
+}
+.boardlist {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto 0px;
+}
+
+.wrap {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.board {
+  min-height: calc(100vh - 82.97px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.board_background {
+  width: 100%;
+  min-width: 510px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 82.97px);
+  /* background-image: url("../images/pexels-pixabay-531767.jpg"); */
+  background-image: url("../images/bigsur.jpg");
+  background-size: 100vw;
+}
+
+.trip-item {
+  width: 95%;
+  margin-bottom: 10px;
+  position: relative;
+  border-radius: 8px;
+  isolation: isolate;
+  padding: 12px;
+  border: 1px solid lightgrey;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.trip-item > a {
+  color: black;
+}
+
+.trip-item > a:hover {
+  color: orange;
+}
+
+.date,
+.writer {
+  font-size: 12px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 4px;
+  font-weight: 400;
+}
+
+#board-title {
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  font-size: 16px;
+  margin-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  line-height: 28px;
+  height: 28px;
+  background-color: #f0f0f0;
+}
+
+#btn-write {
+  border-radius: 20px;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  margin-right: 4px;
+  height: 28px;
+}
+
+.boardlist-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.trip-info {
+  height: 10px;
+  box-sizing: border-box;
+  align-self: first baseline;
+}
+
+.trip-content {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  font-size: 16px;
+  color: black;
+  align-self: center;
+  font-weight: 300;
+}
+
+.title:hover {
+  color: #ee5507;
+}
+
+#select-spot {
+  margin-bottom: 10px;
+}
+
+.trip-line {
+  /* background-color: yellow; */
+  align-items: center;
+}
+
+.index {
+  background-color: black;
+  width: 30px;
+  box-sizing: border-box;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
